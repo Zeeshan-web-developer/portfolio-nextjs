@@ -1,9 +1,9 @@
 import React from 'react'
 type Props = {
-minTens,
-minUnits,
-secTens,
-secUnits,
+minTens:React.MutableRefObject<any>,
+minUnits:React.MutableRefObject<any>,
+secTens:React.MutableRefObject<any>,
+secUnits:React.MutableRefObject<any>,
 }
 export default function Timer(props:Props) {
   return (

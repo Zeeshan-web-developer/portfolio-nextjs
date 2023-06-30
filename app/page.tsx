@@ -26,11 +26,11 @@ export default function Home() {
 
   useEffect(() => {
     // remove the interval Cookie timer setter when
-    clearInterval(context.sharedState.userdata.timerCookieRef.current);
+    clearInterval(context.sharedState.userdata?.timerCookieRef?.current);
     if (typeof window !== "undefined") {
       // remove UserDataPuller project EventListeners
-      window.removeEventListener("resize", context.sharedState.userdata.windowSizeTracker.current);
-      window.removeEventListener("mousemove", context.sharedState.userdata.mousePositionTracker.current, false);
+      window.removeEventListener("resize", context.sharedState.userdata.windowSizeTracker?.current);
+      window.removeEventListener("mousemove", context.sharedState.userdata.mousePositionTracker?.current, false);
       // remove Typing project EventListeners
       window.removeEventListener("resize", context.sharedState.typing.eventInputLostFocus);
       document.removeEventListener("keydown", context.sharedState.typing.keyboardEvent);
@@ -86,11 +86,11 @@ export default function Home() {
       </Head>
       <div className="relative snap-mandatory min-h-screen bg-AAprimary w-full ">
         {context.sharedState.finishedLoading ? <></> : ShowThisCantBeReached ? <ThisCantBeReached /> : <></>}
-        {context.sharedState.finishedLoading ? <></> : ShowElement ? <Startup /> : <></>}
+        {context.sharedState.finishedLoading ? <></> : ShowElement ? <Startup  /> : <></>}
         <Header finishedLoading={context.sharedState.finishedLoading} sectionsRef={homeRef} />
         <MyName finishedLoading={context.sharedState.finishedLoading} />
         <SocialMediaArround finishedLoading={context.sharedState.finishedLoading} />
-        {context.sharedState.finishedLoading ? <AboutMe ref={aboutRef} /> : <></>}
+        {context.sharedState.finishedLoading ? <AboutMe /> : <></>}
         {context.sharedState.finishedLoading ? <WhereIHaveWorked /> : <></>}
         {context.sharedState.finishedLoading ? <SomethingIveBuilt /> : <></>}
         {context.sharedState.finishedLoading ? <GetInTouch /> : <></>}

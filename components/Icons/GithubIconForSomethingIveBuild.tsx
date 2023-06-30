@@ -1,4 +1,9 @@
-const GithubIcon = props => {
+
+type props = {
+
+  link: string;
+};
+const GithubIcon = (props:props) => {
     return (
       <a href={props.link} target="_blank" rel="noreferrer">
         <svg

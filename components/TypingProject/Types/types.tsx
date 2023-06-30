@@ -6,6 +6,6 @@ export type ActiveWordWithIndex = {
       indexTo: number;
     };
   };
-  export type Data = [wordsStatus, [{ char: string; charColor: string }?], { CursorPosition: number }];
+export type Data = [wordsStatus, ({ char: string; charColor: string } | undefined)[], { CursorPosition: number }];
   export type wordsStatus = [{ word: string; indexFrom: number; indexTo: number }?];
   export type Statistics = [{ round: number; wpm: number; accuracy: number }?];

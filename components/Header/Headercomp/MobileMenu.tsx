@@ -1,6 +1,13 @@
-import { motion } from "../../../node_modules/framer-motion/dist/framer-motion";
+import { motion } from "framer-motion";
 import { Link } from "react-scroll";
-const MobileMenu = props => {
+
+type Props = {
+  rotate: boolean;
+  setRotate: any;
+  setShowElement: any;
+  ShowElement: boolean;
+};
+const MobileMenu = (props:Props) => {
   const closeMenu = () => {
     props.setRotate(!props.rotate);
     props.setShowElement(!props.ShowElement);

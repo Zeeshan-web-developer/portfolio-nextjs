@@ -1,13 +1,29 @@
 import React from "react";
 import { motion } from "framer-motion";
 
+// const getTopScore = (st: Statistics) => {
+//   if (st.length > 1) {
+//     const statics = [...st.slice(0)?.reverse()];
+//     let topScore = statics[0]?.wpm;
+//     let topScoreIndex = 0;
+//     statics?.forEach((item, index) => {
+//       if (item.wpm > topScore) {
+//         topScore = item?.wpm;
+//         topScoreIndex = index;
+//       }
+//     });
+//     return topScoreIndex;
+//   } else {
+//     return null;
+//   }
+// };
 const getTopScore = (st: Statistics) => {
   if (st.length > 1) {
-    const statics = [...st.slice(0).reverse()];
-    let topScore = statics[0].wpm;
+    const statics = [...st.slice(0)?.reverse()];
+    let topScore = statics[0]?.wpm||0;
     let topScoreIndex = 0;
-    statics.forEach((item, index) => {
-      if (item.wpm > topScore) {
+    statics?.forEach((item, index) => {
+      if (item?.wpm && item.wpm > topScore) {
         topScore = item.wpm;
         topScoreIndex = index;
       }
@@ -17,6 +33,7 @@ const getTopScore = (st: Statistics) => {
     return null;
   }
 };
+
 
 const isTopScore = (index: number, statistics: Statistics) => {
   const result = getTopScore(statistics);
@@ -100,22 +117,22 @@ export default function StatisticsTab({
                             },
                           }}
                         >
-                          <td className="px-6 py-4 text-sm font-medium  whitespace-nowrap">{item.round}</td>
+                          <td className="px-6 py-4 text-sm font-medium  whitespace-nowrap">{item?.round}</td>
                           <td className="px-6 py-4 text-sm flex sm:flex-row  flex-col   whitespace-nowrap">
                             <span className="sm:order-2 order-1 sm:pl-2">{isTopScore(index, statistics)}</span>
-                            <span>{item.wpm} wpm </span>
+                            <span>{item?.wpm} wpm </span>
                           </td>
 
-                          <td className="px-6 py-4 text-sm text-left  whitespace-nowrap">{item.accuracy}%</td>
+                          <td className="px-6 py-4 text-sm text-left  whitespace-nowrap">{item?.accuracy}%</td>
                         </motion.tr>
                       ) : (
                         <tr key={index}>
-                          <td className="px-6 py-4 text-sm font-medium  whitespace-nowrap">{item.round}</td>
+                          <td className="px-6 py-4 text-sm font-medium  whitespace-nowrap">{item?.round}</td>
                           <td className="px-6 py-4 text-sm flex sm:flex-row flex-col  whitespace-nowrap">
                             <span className="sm:order-2 order-1 sm:pl-2">{isTopScore(index, statistics)}</span>
-                            <span>{item.wpm} wpm </span>
+                            <span>{item?.wpm} wpm </span>
                           </td>
-                          <td className="px-6 py-4 text-sm text-left  whitespace-nowrap">{item.accuracy}%</td>
+                          <td className="px-6 py-4 text-sm text-left  whitespace-nowrap">{item?.accuracy}%</td>
                         </tr>
                       );
                     })}

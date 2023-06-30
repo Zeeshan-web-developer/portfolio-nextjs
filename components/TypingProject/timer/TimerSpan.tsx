@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
+import { type } from "os";
 
 
 // this will return min and sec Tens and Units example of of seconds is 180 sec return is [3,0,0]
@@ -22,6 +23,13 @@ const getMinutesAndSeconds = (secondsCounts: number) => {
     }
   }
 };
+type Props = {
+  setIsFinished: any;
+  inputLostFocus: boolean;
+  seconds: any;
+  timerCountingInterval: any;
+  updateStatistics: any;
+};
 export default function TimerSpan({
   setIsFinished,
   inputLostFocus,
@@ -29,7 +37,9 @@ export default function TimerSpan({
   timerCountingInterval,
   updateStatistics,
   
-}) {
+}
+
+  : Props) {
   const [secondsState, setSecondsState] = useState<number>(seconds.current);
   const timerSpanRef = useRef<HTMLSpanElement>(null);
   const [timerFinishedByItSelf,setTimerIsFinishedByItSelf] = useState<boolean>(false);

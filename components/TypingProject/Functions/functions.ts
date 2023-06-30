@@ -4,6 +4,8 @@ import { wordsStatus,Data,ActiveWordWithIndex } from "../Types/types";
  * @note use minLength & maxLength to limit the quote length
  * @default_URL : https://api.quotable.io/random?minLength=100&maxLength=140
  */
+
+  
 export const getData = async (
   arg_state: React.Dispatch<React.SetStateAction<Data>>,
   setActiveWordWithIndex: React.Dispatch<React.SetStateAction<ActiveWordWithIndex>>,
@@ -32,7 +34,7 @@ export const getData = async (
       });
       // getting index of the first char and last char in the text.
       let LastIndex = 0;
-      wordsAndStatus.forEach((item, index) => {
+      wordsAndStatus.forEach((item:any, index) => {
         if (index == 0) {
           item.indexFrom = 0;
           item.indexTo = item.word.length - 1;
@@ -58,7 +60,10 @@ export const getData = async (
         });
       });
       setRoundCounter(roundCounter + 1);
-      setActiveWordWithIndex({ wordIndex: 0, wordDetail: temArray[0][0] }); // set the first active word as active after Data is loaded
+      const firstWord = temArray[0][0];
+if (firstWord) {
+  setActiveWordWithIndex({ wordIndex: 0, wordDetail: firstWord });
+}
       /**
        * @stateChange : this will change the state that contains the data
        */
@@ -111,50 +116,92 @@ export const handleOnChangeInput = (
    * @nextForLoop
    * this for loop to give the char its default color back, starting from activeWord first char index
    * this loop will help  when user delete a character
-   */
-  for (let j = activeWordWithIndex.wordDetail.indexFrom; j < myText[1].length; j++) {
-    myText[1][j].charColor = "text-gray-500";
+  */
+  
+  for (let j = activeWordWithIndex?.wordDetail?.indexFrom || 0; j < myText[1].length; j++) {
+  if (myText[1][j] && myText[1][j]!.charColor !== undefined) {
+    myText[1][j]!.charColor = "text-gray-500";
   }
+}
 
+
+
+
+
+
+  
   // start validating from this index CharIndex initial
-  let targetWordIndexIncrement = activeWordWithIndex.wordDetail.indexFrom;
-  input.split("").forEach((element, index) => {
-    myText[1][targetWordIndexIncrement].charColor =
-      element === myText[1][targetWordIndexIncrement].char ? "text-AAsecondary" : "text-AAError";
-    targetWordIndexIncrement++;
-  });
+  // let targetWordIndexIncrement = activeWordWithIndex.wordDetail.indexFrom;
+  // input.split("").forEach((element, index) => {
+  //   myText[1][targetWordIndexIncrement].charColor =
+  //     element === myText[1][targetWordIndexIncrement].char ? "text-AAsecondary" : "text-AAError";
+  //   targetWordIndexIncrement++;
+  // });
+  let targetWordIndexIncrement = activeWordWithIndex?.wordDetail?.indexFrom || 0;
+input.split("").forEach((element, index) => {
+  if (myText[1][targetWordIndexIncrement] && myText[1][targetWordIndexIncrement]!.charColor !== undefined) {
+    myText[1][targetWordIndexIncrement]!.charColor =
+      element === myText[1][targetWordIndexIncrement]!.char ? "text-AAsecondary" : "text-AAError";
+  }
+  targetWordIndexIncrement++;
+});
+
   // checks if input is equal to the active word ( true => set inputValue to "" )
+  // if (input.localeCompare(activeWordWithIndex.wordDetail.word) == 0) {
+  //   const nextWordIndex = activeWordWithIndex.wordIndex + 1;
+  //   setActiveWordWithIndex({
+  //     wordIndex: nextWordIndex,
+  //     wordDetail: myText[0][nextWordIndex],
+  //   });
+  //   event.target.value = ""; // clear the input
+  // }
   if (input.localeCompare(activeWordWithIndex.wordDetail.word) == 0) {
-    const nextWordIndex = activeWordWithIndex.wordIndex + 1;
+  const nextWordIndex = activeWordWithIndex.wordIndex + 1;
+  const nextWord = myText[0][nextWordIndex];
+  if (nextWord) {
     setActiveWordWithIndex({
       wordIndex: nextWordIndex,
-      wordDetail: myText[0][nextWordIndex],
+      wordDetail: nextWord,
     });
-    event.target.value = ""; // clear the input
   }
+  event.target.value = ""; // clear the input
+}
+
 
   // set the cursor position to next target Char that will be typed of the active word
   /**
    * @note : normal for loop is used here to break the loop
    */
   for (let i = 0; i < myText[1].length; i++) {
-    if (myText[1][i].charColor.localeCompare("text-gray-500") == 0) {
+    if (myText[1][i]?.charColor.localeCompare("text-gray-500") == 0) {
       myText[2].CursorPosition = i;
       break;
     }
   }
   setMyText([...myText]); // update the state
   // Checking if the user finished typing by checking if the last char gray color is changed!
-  if (!(myText[1][myText[1].length - 1].charColor === "text-gray-500")) {
-    console.log("Player Finished typing!!");
-    updateStatistics(); // update statistics
-    /**
-     * @note :  next line will prevent from showing the previous text when user restarts
-     *  by checking !(myText[1].length==0)
-     */
-    myText[1] = [];
-    setMyText([...myText]);
-    setIsFinished(true);
-    clearInterval(timerCountingInterval.current); // stop the timer
-  }
+//   if (!(myText[1][myText[1].length - 1].charColor === "text-gray-500")) {
+//     console.log("Player Finished typing!!");
+//     updateStatistics(); // update statistics
+//     /**
+//      * @note :  next line will prevent from showing the previous text when user restarts
+//      *  by checking !(myText[1].length==0)
+//      */
+//     myText[1] = [];
+//     setMyText([...myText]);
+//     setIsFinished(true);
+//     clearInterval(timerCountingInterval.current); // stop the timer
+//   }
+// };
+  if (!(myText[1][myText[1].length - 1]?.charColor === "text-gray-500")) {
+  console.log("Player Finished typing!!");
+  updateStatistics(); // update statistics
+
+  // Clearing the myText[1] array
+  myText[1] = [];
+
+  setMyText([...myText]);
+  setIsFinished(true);
+  clearInterval(timerCountingInterval.current); // stop the timer
+}
 };

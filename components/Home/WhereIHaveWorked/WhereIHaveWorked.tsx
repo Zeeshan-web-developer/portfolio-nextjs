@@ -1,5 +1,5 @@
 import React from "react";
-import { motion } from "../../../node_modules/framer-motion/dist/framer-motion";
+import { motion } from "framer-motion";
 import ArrowIcon from "../../Icons/ArrowIcon";
 import TrouveTavoie from "./Descriptions/TrouveTavoie";
 import FeverTokens from "./Descriptions/FeverTokens";
@@ -56,19 +56,31 @@ export default function WhereIHaveWorked() {
   );
 }
 
-const CompaniesBar = props => {
-  const [barPosition, setBarPosition] = React.useState<Number>(-8); // Green bar position by the default it's -20px
-  const [barAbovePosition, setBarAbovePosition] = React.useState<Number>(0);
-  const [companyNameBackgroundColorGreen, setCompanyNameBackgroundColorGreen] = React.useState<boolean[]>([
-    true,
-    false,
-    false,
-    false,
-    false,
-    ,
-    false,
-  ]);
-  const CompanyButton = props => {
+type props = {
+  setDescriptionJob: any;
+};
+
+const CompaniesBar = (props:any) => {
+  // const [barPosition, setBarPosition] = React.useState<Number>(-8); // Green bar position by the default it's -20px
+  // const [barAbovePosition, setBarAbovePosition] = React.useState<Number>(0);
+  const [barPosition, setBarPosition] = React.useState<number>(-8);
+const [barAbovePosition, setBarAbovePosition] = React.useState<number>(0);
+
+  // const [companyNameBackgroundColorGreen, setCompanyNameBackgroundColorGreen] = React.useState<boolean[]>([
+  //   true,
+  //   false,
+  //   false,
+  //   false,
+  //   false,
+  //   ,
+  //   false,
+  // ]);
+  const [companyNameBackgroundColorGreen, setCompanyNameBackgroundColorGreen] = React.useState<boolean[]>(
+  [true, false, false, false, false, false, false]
+);
+
+  const Props=props
+  const CompanyButton = (props:any) => {
     return (
       <button
         onClick={() => {

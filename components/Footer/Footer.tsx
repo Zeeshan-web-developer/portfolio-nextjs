@@ -3,7 +3,14 @@ import GithubIcon from "../Icons/GithubIcon";
 import LinkedinIcon from "../Icons/LinkedinIcon";
 import InstagramIcon from "../Icons/InstagramIcon";
 import YoutubeIcon from "../Icons/YoutubeIcon";
-const ClickableIcon = props => {
+import { type } from "os";
+
+type props
+  = {
+    href: string;
+    Icon: any;
+  };
+const ClickableIcon = (props:props) => {
   return (
     <a href={props.href} className="" target={"_blank"} rel="noreferrer">
       <props.Icon className={"w-5 h-5 text-gray-400 hover:text-AAsecondary fill-current hover:cursor-pointer"} />

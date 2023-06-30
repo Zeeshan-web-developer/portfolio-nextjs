@@ -1,8 +1,11 @@
-import {NextRouter} from 'next/router';
-const ExternalLink = (props: { router: NextRouter; url: string }) => {
+import { NextRouter } from 'next/router';
+import { useRouter } from "next/navigation";
+
+const ExternalLink = (props: { url: string }) => {
+  const   router = useRouter();
     return (
       <svg
-        onClick={() => props.router.push(props.url)}
+        onClick={() => router.push(props.url)}
         xmlns="http://www.w3.org/2000/svg"
         role="img"
         viewBox="0 0 24 24"

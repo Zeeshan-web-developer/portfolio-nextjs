@@ -1,9 +1,9 @@
 import React from "react";
 
 type Props = {
-  size;
-  title;
-  value;
+  size: any;
+  title: string;
+  value: string;
 };
 
 // repeted code for setting Additional Data user location

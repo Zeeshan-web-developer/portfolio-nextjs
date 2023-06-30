@@ -1,7 +1,8 @@
 import React from "react";
 import Img from "../../../components/smallComp/image/Img";
 import ArrowIcon from "../../../components/Icons/ArrowIcon";
-export default function AboutMe(props) {
+
+export default function AboutMe() {
   const technologies = [
     ["Reactjs", "Next.js","JavaScript (ES6+)", "Tailwind CSS"],
     ["Tailwind CSS", "Node.js", "TypeScript", "Framer Motion"],

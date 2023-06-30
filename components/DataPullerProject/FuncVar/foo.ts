@@ -1,12 +1,24 @@
 // ? this will update secUnits each second, secTens, minUnits, minTens cookies then update the span from cookies values
-export const CookieTimeCounter = ({
-  context,
-  secUnits,
-  secTens,
-  minUnits,
-  minTens,
-  cookieCutter,
-}) => {
+
+type CookieTimeCounterProps = {
+  context: any;
+  secUnits: any;
+  secTens: any;
+  minUnits: any;
+  minTens: any;
+  cookieCutter: any;
+};
+export const CookieTimeCounter = (
+  {
+    context,
+    secUnits,
+    secTens,
+    minUnits,
+    minTens,
+    cookieCutter,
+  }
+    : CookieTimeCounterProps
+) => {
   if (typeof window != undefined) {
     // Cookie existence verification
     if (cookieCutter.get("timer-sec-units")) {
@@ -67,13 +79,23 @@ export const CookieTimeCounter = ({
 };
 
 // ? Declare Mouse Event and Window size tracker event
+type MouseWindowEventListnersProps = {
+  context: any;
+  windowWidth: any;
+  windowHeight: any;
+  mouseX: any;
+  mouseY: any;
+};
 export const MouseWindowEventListners = ({
   context,
   windowWidth,
   windowHeight,
   mouseX,
   mouseY,
-}) => {
+
+}
+  : MouseWindowEventListnersProps
+) => {
   // assign context windowSize Ref here in useEffect once, so to make sure that it only assigned once
   context.sharedState.userdata.windowSizeTracker.current = () => {
     if (windowWidth.current) {
@@ -84,7 +106,12 @@ export const MouseWindowEventListners = ({
   };
   // assint mousePositionTracker.current here to use in the as fallback function for the event
   // and to remove the event in the other pages
-  context.sharedState.userdata.mousePositionTracker.current = event => {
+
+  type Event = {
+    pageX: number;
+    pageY: number;
+  };
+  context.sharedState.userdata.mousePositionTracker.current = (event: Event)=> {
     if (mouseX.current) {
       mouseX.current.innerText = String(event.pageX);
       mouseY.current.innerText = String(event.pageY);
@@ -109,7 +136,19 @@ export const MouseWindowEventListners = ({
 
 import { detect } from "detect-browser";
 import { getGPUTier } from "detect-gpu";
+import { type } from "os";
+
 // ? async function for getting user information. IP, location, zip code, browser, OS, GPU, etc.
+
+type UserInfoProps = {
+  setLocation: any;
+  setZipCode: any;
+  setGpuTier: any;
+  userData: any;
+  cookieCutter: any;
+  lastVisit_Ref: any;
+  firstVisit_Ref: any;
+};
 export const userInfo = async ({
   setLocation,
   setZipCode,
@@ -118,7 +157,9 @@ export const userInfo = async ({
   cookieCutter,
   lastVisit_Ref,
   firstVisit_Ref,
-}) => {
+}:
+  UserInfoProps
+) => {
   // this api will return current ip address of the requester
   const IP_Address = async () => {
     return fetch("https://api.ipify.org/?format=json")
@@ -187,18 +228,36 @@ export const userInfo = async ({
 };
 
 // ? update Location on click event callback function
+ 
+type OnClickUpdateLocationProps = {
+  setUpdatingLocatinResult: any;
+  setUpdatingLocation: any;
+  setLocation: any;
+  setZipCode: any;
+};
+
 export const onClickUpdateLocation = async (
-  setUpdatingLocatinResult,
-  setUpdatingLocation,
-  setLocation,
-  setZipCode
+  setUpdatingLocatinResult: any,
+  setUpdatingLocation: any,
+  setLocation: any,
+  setZipCode: any
+
+    
+  
 ) => {
   if (!navigator.geolocation) {
     alert("Geolocation is not supported by your browser");
     return;
   }
   // function will be executed after permission is authorized
-  function success(position) {
+  
+  type Position = {
+    coords: {
+      latitude: number;
+      longitude: number;
+    };
+  };
+  function success(position: Position) {
     setLocation([position.coords.latitude, position.coords.longitude]);
     const temp_array_location = [];
     temp_array_location.push(position.coords.latitude);
@@ -211,7 +270,7 @@ export const onClickUpdateLocation = async (
     setUpdatingLocatinResult(false);
 
     // call the api by passing new lat and lon
-    const api_get_zip = async (lat, lon) => {
+    const api_get_zip = async (lat:number, lon:number) => {
       return fetch("/api/userInfoByLatLon/" + lat + "/" + lon)
         .then(res => res.json())
         .then(data => {
@@ -244,7 +303,13 @@ export const onClickUpdateLocation = async (
 };
 
 // data for Additional Information Section 1
-export const Additional_data = (userData, gpuTier) => {
+type AdditionalDataProps = {
+  userData: any;
+  gpuTier: any;
+};
+export const Additional_data = (userData:any, gpuTier:any
+  
+) => {
   return [
     { title: "Browser :", value: userData.current?.browser || "Checking..." },
     {
@@ -270,7 +335,7 @@ export const Additional_data = (userData, gpuTier) => {
 };
 
 // data for the table
-export const tableData = (userData, zipCode) => {
+export const tableData = (userData:any, zipCode:any) => {
   return [
     {
       title: "IP Address :",

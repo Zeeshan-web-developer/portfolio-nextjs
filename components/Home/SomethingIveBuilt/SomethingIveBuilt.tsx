@@ -5,9 +5,9 @@ import ArrowIcon from "../../Icons/ArrowIcon";
 import Img from "../../smallComp/image/Img";
 import GithubIcon from "../../Icons/GithubIconForSomethingIveBuild";
 import ExternalLink from "../../Icons/ExternalLink";
+import { NextRouter } from "next/router";
 
 export default function SomethingIveBuilt() {
-  const router = useRouter();
   return (
     <div
       id="SomethingIveBuiltSection"
@@ -83,7 +83,10 @@ export default function SomethingIveBuilt() {
               
               <div className="z-10 flex fle-row space-x-5 ">
                 <a href="https://admin.resthero.io/" target={"_blank"} rel="noreferrer">
-                  <ExternalLink url={""} router={router} />
+                  <ExternalLink url={""}
+                   
+                    
+                  />
                 </a>
               </div>
             </div>
@@ -147,7 +150,7 @@ export default function SomethingIveBuilt() {
              
               </ul>
               <div className="z-10 flex fle-row space-x-5 ">
-                <ExternalLink url={"typing"} router={router} />
+                <ExternalLink url={"typing"}  />
               </div>
             </div>
           </div>
@@ -216,7 +219,7 @@ export default function SomethingIveBuilt() {
                 <span className="pr-4 z-10">Location</span>
               </ul>
               <div className="z-10 flex fle-row space-x-5 ">
-                <ExternalLink url={"https://go.inspected.com/login"} router={router} />
+                <ExternalLink url={"https://go.inspected.com/login"} />
               </div>
 
             </div>
