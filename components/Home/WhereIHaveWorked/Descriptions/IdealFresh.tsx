@@ -5,17 +5,33 @@ import { getTasksTextWithHighlightedKeyword } from "./taskAndType";
 export default function IdealFresh() {
   const tasks = [
     {
-      text: "Designed and Built a Desktop app for IdealFresh that manage billings, client circumstances using Apache POI with Microsoft Office Excel.",
-      keywords: ["Apache POI"],
-    },
-    {
-      text: "Creating customized scripts for pulling, managing and refactoring files from Clouds.",
-      keywords: ["scripts"],
-    },
-    {
-      text: "Daily communications and interactions with a non-developers to solve their problems by providing technological solutions and expertise.",
-      keywords: ["non-developers"],
-    },
+    text: "Led the development of a real-time chat application using Erlang, leveraging its concurrent and fault-tolerant capabilities for optimal performance.",
+    keywords: ["Erlang", "Real-time Chat", "Concurrent Programming", "Fault-Tolerant"],
+  },
+  {
+    text: "Implemented XMPP (Extensible Messaging and Presence Protocol) to enable seamless communication and real-time data exchange within the chat application.",
+    keywords: ["XMPP", "Real-time Communication", "Data Exchange"],
+  },
+  {
+    text: "Utilized WebSockets to establish a persistent and efficient connection between the server and clients, ensuring instant message delivery and low-latency communication.",
+    keywords: ["WebSockets", "Persistent Connection", "Low-Latency Communication"],
+  },
+  {
+    text: "Collaborated with a team of developers to enhance the scalability and responsiveness of the chat application, accommodating a growing user base.",
+    keywords: ["Collaboration", "Scalability", "Responsiveness"],
+  },
+  {
+    text: "Developed features to support multimedia content sharing within the chat app, enriching user interactions with images, videos, and other file types.",
+    keywords: ["Multimedia Content Sharing", "User Interactions", "File Sharing"],
+  },
+  {
+    text: "Integrated security measures, including end-to-end encryption, to ensure the confidentiality and privacy of user messages and data.",
+    keywords: ["Security Measures", "End-to-End Encryption", "User Privacy"],
+  },
+  {
+    text: "Provided ongoing maintenance and troubleshooting support, addressing issues promptly to maintain a reliable and seamless chat experience for users.",
+    keywords: ["Maintenance", "Troubleshooting", "User Experience"],
+  },
   ];
   return (
     <>
@@ -23,10 +39,10 @@ export default function IdealFresh() {
         <div className="flex flex-col spacey-y-2">
           {/* Title */}
           <span className="text-gray-100 sm:text-lg text-sm font-Arimo tracking-wide">
-            Software Developer <span className="text-AAsecondary">@ JavaFX</span>
+            Fullstack Developer <span className="text-AAsecondary">React , Erlang</span>
           </span>
           {/* Date */}
-          <span className="font-mono text-xs text-gray-500">June - August 2021</span>
+          <span className="font-mono text-xs text-gray-500">June 2019 - July 2021</span>
         </div>
         <div className="flex flex-col space-y-4 sm:text-sm text-xs">
             {/* Tasks Description 1 */}

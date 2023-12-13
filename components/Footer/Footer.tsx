@@ -18,10 +18,8 @@ const ClickableIcon = (props:props) => {
   );
 };
 const IconsData = [
-  { href: "https://github.com/hktitof", Icon: GithubIcon },
-  { href: "https://www.linkedin.com/in/abdellatif-anaflous/", Icon: LinkedinIcon },
-  { href: "https://www.instagram.com/titof_abdo/", Icon: InstagramIcon },
-  { href: "https://www.youtube.com/@abdellatif_anaflous", Icon: YoutubeIcon },
+  { href: "https://github.com/Zeeshan-web-developer", Icon: GithubIcon },
+  { href: "https://www.linkedin.com/in/zeeshandev/", Icon: LinkedinIcon },
 ];
 
 export default function Fotter(props: { githubUrl: string; hideSocialsInDesktop: boolean }) {

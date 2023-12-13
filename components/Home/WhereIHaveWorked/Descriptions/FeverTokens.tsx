@@ -3,18 +3,26 @@ import ArrowIcon from "../../../Icons/ArrowIcon";
 import { getTasksTextWithHighlightedKeyword } from "./taskAndType";
 export default function FeverTokens() {
   const tasks = [
-    {
-      text: "Leading the development of the NFT Marketplace v2 for the Platform FeverTokens.",
-      keywords: ["NFT Marketplace v2"],
-    },
-    {
-      text: "Worked with a team of six developers to build a temporary NFT Marketplace platform for VivaTech2022 event, an ambitious startup originating from France,Paris.",
-      keywords: ["VivaTech2022 event"],
-    },
-    {
-      text: "Interacted with the blockchain & Smart Contracts to build the new FeverTokens Platform.",
-      keywords: ["blockchain & Smart Contracts"],
-    },
+   {
+    text: "Utilized React and Bootstrap to enhance the user interface and user experience of the Inspected platform, ensuring a seamless and visually appealing remote inspection process.",
+    keywords: ["React", "Bootstrap", "User Interface", "User Experience", "Inspected platform"],
+  },
+  {
+    text: "Implemented JWT token for secure authentication, enhancing the overall security and integrity of the Inspected platform.",
+    keywords: ["JWT Token", "Authentication", "Security", "Inspected platform"],
+  },
+  {
+    text: "Developed React protected routes to control access and ensure that sensitive information is only accessible to authorized users, enhancing the privacy and confidentiality of data on the Inspected platform.",
+    keywords: ["React Protected Routes", "Authorization", "Privacy", "Inspected platform"],
+  },
+  {
+    text: "Designed and implemented multi-user functionality, allowing diverse user roles to interact seamlessly with the Inspected platform, promoting collaboration and efficiency.",
+    keywords: ["Multi-User Functionality", "User Roles", "Collaboration", "Inspected platform"],
+  },
+  {
+    text: "Contributed to the creation of a centralized hub within Inspected, providing a dedicated compliance solution to promote a safe workplace and prioritize the health and safety of workers during remote inspections.",
+    keywords: ["Centralized Hub", "Compliance Solution", "Health and Safety", "Inspected platform"],
+  },
   ];
   return (
     <>
@@ -22,10 +30,10 @@ export default function FeverTokens() {
         <div className="flex flex-col spacey-y-2">
           {/* Title */}
           <span className="text-gray-100 sm:text-lg text-sm font-Arimo tracking-wide">
-            Software Engineer <span className="text-AAsecondary">@ web3</span>
+            Frontend Engineer <span className="text-AAsecondary">Reactjs</span>
           </span>
           {/* Date */}
-          <span className="font-mono text-xs text-gray-500">Mars - August 2022</span>
+          <span className="font-mono text-xs text-gray-500">Aug 2021 - Feb 2022</span>
         </div>
         <div className="flex flex-col space-y-4 sm:text-sm text-xs">
             {/* Tasks Description 1 */}

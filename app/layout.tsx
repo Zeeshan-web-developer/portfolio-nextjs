@@ -8,6 +8,7 @@ import { Analytics } from '@vercel/analytics/react';
 // import { useRef, useState } from "react";
 import ContextProvider from "./ContextProvider"
 import { type } from 'os';
+import WhatsappFixedFoooter from '@/components/Footer/WhatsappFixedFoooter';
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
@@ -32,7 +33,8 @@ export default function RootLayout({
         children}
         </ContextProvider>
          
-      <Analytics />
+        <Analytics />
+        <WhatsappFixedFoooter />
        
       </body>
     </html>

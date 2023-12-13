@@ -2,8 +2,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;1,400&display=swap");
 
-
-@import url('https://fonts.googleapis.com/css2?family=Arimo&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Arimo&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -41,4 +40,63 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+@keyframes heartbeat {
+  0% {
+    transform: scale(1);
+  }
+  25% {
+    transform: scale(1.1);
+  }
+  50% {
+    transform: scale(1);
+  }
+  75% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.fixed-div {
+  position: fixed;
+  bottom: 1.5rem; /* Adjust to desired position */
+  right: 10rem; /* Adjust to desired position */
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  background-color: #8b008b; /* Change to the desired background color */
+  color: white; /* Change to the desired text color */
+  border-radius: 0.5rem; /* Adjust to desired border radius */
+  animation: heartbeat 2s infinite linear; /* Adjust duration and timing as needed */
+}
+
+@keyframes hoverScale {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.fixed-div:hover {
+  animation: hoverScale 0.5s ease-in-out;
+}
+
+.fixed-div button {
+  display: flex;
+  align-items: center;
+}
+
+.fixed-div button:hover {
+  cursor: pointer;
 }

@@ -4,32 +4,46 @@ import { getTasksTextWithHighlightedKeyword } from "./taskAndType";
 
 export default function TrouveTavoie() {
   const tasks = [
-    {
-      text: "Get you E-Shop online on Social Media Own Your Business Data To Grow have your marketing & Delivery sorted headache free",
-      keywords: ["E-Shop", "Social Media", "Own Your Business Data To Grow", "marketing & Delivery"],
-    },
-    {
-      text: "Work with a variety of different languages, frameworks, and content management systems such as JavaScript, TypeScript, Next.js/React",
-      keywords: ["Next.js/React", "AWS", "Vercel"],
-    },
-    {
-      text: "Work on XMPP chat client, which is a real-time chat application that allows users to communicate with each other via text messages",
-      keywords: [
-        "XMPP chat client",
-      ],
-    },
-  ];
+  {
+    text: "Transform and optimize existing Angular store into a dynamic and responsive E-Shop using React, Redux, and Tailwind CSS",
+    keywords: ["React", "Redux", "Tailwind CSS", "E-Shop"],
+  },
+  {
+    text: "Integrate and enhance the online presence on Social Media platforms to maximize reach and engagement",
+    keywords: ["Social Media", "Online Presence", "Engagement"],
+  },
+  {
+    text: "Implement Google Maps integration to provide users with a location-based experience on the E-Shop",
+    keywords: ["Google Maps", "Location-Based Experience"],
+  },
+  {
+    text: "Develop and implement React Error Boundary for a robust and error-free user experience",
+    keywords: ["React Error Boundary", "Error-Free", "User Experience"],
+  },
+  {
+    text: "Create visually compelling data visualizations using Charts.js to provide users with insightful analytics",
+    keywords: ["Charts.js", "Data Visualizations", "Analytics"],
+  },
+  {
+    text: "Collaborate with a variety of languages, frameworks, and content management systems including JavaScript, TypeScript, Next.js/React, AWS, and Vercel",
+    keywords: ["JavaScript", "TypeScript", "Next.js/React", "AWS", "Vercel"],
+  },
+  {
+    text: "Contribute to the development of an XMPP chat client, enabling real-time communication through text messages",
+    keywords: ["XMPP chat client", "Real-time Communication", "Text Messages"],
+  },
+];
 
   return (
     <>
       <div className="flex flex-col space-y-5 max-w-xl px-4 md:px-0">
         <div className="flex flex-col spacey-y-2">
-          {/* Title */}
+          Title
           <span className="text-gray-100 sm:text-lg text-sm font-Arimo tracking-wide">
             Software Engineer <span className="text-AAsecondary">@ Mern Stack Developer</span>
           </span>
-          {/* Date */}
-          {/* <span className="font-mono text-xs text-gray-500">Feb 2022 - Present</span> */}
+          Date 
+           <span className="font-mono text-xs text-gray-500">Feb 2022 - Present</span>
         </div>
         <div className="flex flex-col space-y-4 sm:text-sm text-xs">
           {/* Tasks Description 1 */}
