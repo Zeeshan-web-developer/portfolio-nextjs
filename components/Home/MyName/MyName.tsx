@@ -75,23 +75,7 @@ export default function MyName(props: { finishedLoading: boolean }) {
           },
         }}
         className="text-gray-400 font-Header text-sm md:text-lg sm:text-md mt-10 tracking-wider text-justify"
-      >
-        {/* As a
-        <span className="text-AAsecondary">MERN stack developer</span> 
-        specializing in SAAS e-commerce projects, I possess a strong skill set in
-        developing and delivering exceptional digital experiences. With my expertise
-        in MongoDB, Express.js, React.js, and Node.js, I am proficient in building robust
-        and scalable web applications. I have a deep understanding of the e-commerce domain,
-        including features like product management,
-        shopping carts, secure payment gateways, and user authentication. By utilizing
-        frameworks such as Redux , I optimize the performance and user
-        experience of
-        <span className="text-AAsecondary">        SAAS e-commerce applications
-</span>
-        . Additionally, I have experience
-        integrating with third-party APIs and services to enhance functionality
-        and provide seamless experiences for customers */}
-      </motion.h3>
+      ></motion.h3>
       <motion.div
         initial={{ y: 10, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
@@ -107,7 +91,11 @@ export default function MyName(props: { finishedLoading: boolean }) {
         }}
         className="mt-12"
       >
-        <a href={"/zeeshan_resume.pdf"} target={"_blank"} rel="noreferrer">
+        <a
+          href={"/Zeeshan_CV_september.pdf"}
+          target={"_blank"}
+          rel="noreferrer"
+        >
           <button className="bg-AAprimary text-AAsecondary border rounded px-4 sm:px-8 py-3 sm:py-4 border-AAsecondary">
             Check out my resume!
           </button>

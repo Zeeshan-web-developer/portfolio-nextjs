@@ -1,34 +1,3 @@
-// import { createContext } from "react";
-
-// const AppContext = createContext({
-//   sharedState: {
-//     portfolio: {
-//       NavBar: {
-//         IntervalEvent: null,
-//         scrolling: null,
-//         scrollSizeY: null,
-//       },
-//       Scrolling: {
-//         IntervalEvent: null,
-//       },
-//     },
-//     userdata: {
-//       timerCookieRef: null,
-//       windowSizeTracker: null,
-//       mousePositionTracker: null,
-//     },
-//     typing: {
-//       keyboardEvent: null,
-//       eventInputLostFocus: null,
-//     },
-//     finishedLoading: false,
-//   },
-//   setSharedState: () => {},
-// });
-
-// export default AppContext;
-
-
 import { createContext } from "react";
 
 interface SharedState {
@@ -86,4 +55,3 @@ const AppContext = createContext<AppContextProps>({
 });
 
 export default AppContext;
-

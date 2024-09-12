@@ -7,7 +7,7 @@ type Props = {
   setShowElement: any;
   ShowElement: boolean;
 };
-const MobileMenu = (props:Props) => {
+const MobileMenu = (props: Props) => {
   const closeMenu = () => {
     props.setRotate(!props.rotate);
     props.setShowElement(!props.ShowElement);
@@ -54,7 +54,9 @@ const MobileMenu = (props:Props) => {
             onClick={() => closeMenu()}
             className="flex flex-col text-center space-y-2"
           >
-            <span className="text-AAsecondary text-xs font-mono hover:cursor-pointer">02.</span>
+            <span className="text-AAsecondary text-xs font-mono hover:cursor-pointer">
+              02.
+            </span>
             <span
               className="text-white font-Text2 text-sm sm:text-base
              hover:text-AAsecondary hover:cursor-pointer duration-300"
@@ -96,7 +98,11 @@ const MobileMenu = (props:Props) => {
               Contact
             </span>
           </Link>
-          <a href={"/resume.pdf"} target={"_blank"} rel="noreferrer">
+          <a
+            href={"/Zeeshan_CV_september.pdf"}
+            target={"_blank"}
+            rel="noreferrer"
+          >
             <button
               className="rounded border font-Text2  border-AAsecondary
            hover:bg-ResumeButtonHover py-2 sm:py-4 px-5 sm:px-10 text-xs text-AAsecondary"
